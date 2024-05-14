@@ -1,8 +1,11 @@
+import profile from "../../assets/images/profile.png";
+
 const Header = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Serenity lounge</h1>
-    </>
+    <header className="flex  justify-between items-center p-4 border-b-4">
+      <h1 className="text-3xl font-bold">Serenity lounge</h1>
+      <img src={profile} alt="" srcset="" />
+    </header>
   );
 };
 
