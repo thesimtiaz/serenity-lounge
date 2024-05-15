@@ -1,4 +1,6 @@
-const Blog = ({ blog }) => {
+import { IoBookmarksOutline } from "react-icons/io5";
+
+const Blog = ({ blog, handleAddToBookmark }) => {
   const {
     cover,
     title,
@@ -20,8 +22,14 @@ const Blog = ({ blog }) => {
           </div>
         </div>
 
-        <div>
-          <p className="text-lg font-medium">{reading_time} min read</p>
+        <div className="flex gap-4 text-xl font-medium">
+          <p>{reading_time} min read</p>
+          <button
+            onClick={() => handleAddToBookmark(blog)}
+            className="hover:text-blue-800"
+          >
+            <IoBookmarksOutline />
+          </button>
         </div>
       </div>
 
