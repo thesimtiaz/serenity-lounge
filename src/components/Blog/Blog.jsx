@@ -1,6 +1,6 @@
 import { IoBookmarksOutline } from "react-icons/io5";
 
-const Blog = ({ blog, handleAddToBookmark }) => {
+const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
   const {
     cover,
     title,
@@ -12,10 +12,10 @@ const Blog = ({ blog, handleAddToBookmark }) => {
   } = blog;
   return (
     <div className="mb-8 space-y-4">
-      <img className="w-full rounded-xl" src={cover} alt="" srcset="" />
+      <img className="w-full rounded-xl" src={cover} alt="" />
       <div className="flex justify-between items-center mt-4">
         <div className="flex gap-4">
-          <img className="w-14" src={author_img} alt="" srcset="" />
+          <img className="w-14" src={author_img} alt="" />
           <div className="space-y-1">
             <h4 className="text-2xl font-bold">{author}</h4>
             <p className="text-base font-semibold">{posted_date}</p>
@@ -45,6 +45,13 @@ const Blog = ({ blog, handleAddToBookmark }) => {
           </span>
         ))}
       </p>
+
+      <button
+        className="text-purple-900 font-semibold underline"
+        onClick={() => handleMarkAsRead(reading_time)}
+      >
+        Mark as read
+      </button>
     </div>
   );
 };
