@@ -2,6 +2,7 @@ import { IoBookmarksOutline } from "react-icons/io5";
 
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
   const {
+    id,
     cover,
     title,
     author_img,
@@ -48,7 +49,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
 
       <button
         className="text-purple-900 font-semibold underline"
-        onClick={() => handleMarkAsRead(reading_time)}
+        onClick={() => handleMarkAsRead(id, reading_time)}
       >
         Mark as read
       </button>
